@@ -11,7 +11,7 @@ public class Human extends Animal {
     private String car;
 
     public Human(String firstName) {
-        super("Kamil","homo sapiens",80.0, true);
+        super("Kamil", "homo sapiens", 80.0, true);
         this.firstName = firstName;
     }
 
@@ -21,6 +21,7 @@ public class Human extends Animal {
         System.out.println("Pobieranie danych o wypłacie. Aktualna wypłata: " + salary);
         return salary;
     }
+
     //getter do pola car
     public String getCar() {
         return car;
@@ -39,13 +40,13 @@ public class Human extends Animal {
     }
 
     //setter czy stać człowieka na samochód
-    public void setCar(Car car){
-        if(this.salary > car.getValue()) {
+    public void setCar(Car car) {
+        if (this.salary > car.getValue()) {
             System.out.println("Udało się kupić samochód za gotówkę");
-        } else if (this.salary> car.getValue()/12) {
+        } else if (this.salary > car.getValue() / 12) {
             System.out.println("Udało się kupić samochód na kredyt(no trudno)!");
 
-        }else{
+        } else {
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
         }
     }

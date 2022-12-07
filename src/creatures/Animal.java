@@ -38,7 +38,8 @@ public class Animal {
             case "dog" -> this.weight = DEFAULT_DOG_WEIGHT;
             case "cat" -> this.weight = DEFAULT_CAT_WEIGHT;
             case "bird" -> this.weight = DEFAULT_BIRD_WEIGHT;
-            default -> this.weight = DEFAULT_ANIMAL_WEIGHT;}
+            default -> this.weight = DEFAULT_ANIMAL_WEIGHT;
+        }
         this.weight = weight;
         this.isAlive = isAlive;
     }
