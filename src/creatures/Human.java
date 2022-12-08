@@ -10,9 +10,10 @@ public class Human extends Animal {
     private Double salary;
     private String car;
 
-    public Human(String firstName) {
+    public Human(String firstName, String lastName) {
         super("Kamil", "homo sapiens", 80.0, true);
         this.firstName = firstName;
+        this.lastName = lastName;
     }
 
 
@@ -45,9 +46,12 @@ public class Human extends Animal {
             System.out.println("Udało się kupić samochód za gotówkę");
         } else if (this.salary > car.getValue() / 12) {
             System.out.println("Udało się kupić samochód na kredyt(no trudno)!");
-
         } else {
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
         }
+    }
+    // toString() method
+    public String toString(){
+        return firstName+" "+lastName;
     }
 }

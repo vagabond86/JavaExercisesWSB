@@ -6,7 +6,7 @@ public class Car {
     private Integer year;
     private Integer numOfDoors;
     private String color;
-    private Double millage; // przebieg
+    private Double millage;
     private Double value;
 
     // konstruktory
@@ -21,11 +21,27 @@ public class Car {
     }
 
     // gettery i settery
+
+    public String getModel(){
+        return model;
+    }
     public void setModel(String model) {
         this.model = model;
     }
 
     public Double getValue() {
         return value;
+    }
+
+    public Double getMillage() {
+        return millage;
+    }
+
+    public void setMillage(Double millage) {
+        this.millage = millage;
+    }
+    // toString() method
+    public String toString(){
+        return producer+" "+model+", color: "+color+", value: "+value;
     }
 }

@@ -77,4 +77,8 @@ public class Animal {
     public void setAnimal(Animal dog) {
         this.name = name;
     }
+
+    public String toString(){
+        return species+": "+name+", weight: "+weight;
+    }
 }
