@@ -16,19 +16,18 @@ public class Human extends Animal {
         this.lastName = lastName;
     }
 
+    //getter car
+    public String getCar() {
+        return car;
+    }
 
-    // getter do wypłaty
+    // getter salary
     public Double getSalary() {
         System.out.println("Pobieranie danych o wypłacie. Aktualna wypłata: " + salary);
         return salary;
     }
 
-    //getter do pola car
-    public String getCar() {
-        return car;
-    }
-
-    // setter do wypłaty
+    // setter salary
     public void setSalary(Double salary) {
         if (salary < 0) {
             System.out.println("Nie można przypisać ujemnej wartości wypłaty!");
@@ -40,7 +39,7 @@ public class Human extends Animal {
         }
     }
 
-    //setter czy stać człowieka na samochód
+    //setter check if you could buy it
     public void setCar(Car car) {
         if (this.salary > car.getValue()) {
             System.out.println("Udało się kupić samochód za gotówkę");
@@ -50,8 +49,9 @@ public class Human extends Animal {
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
         }
     }
+
     // toString() method
-    public String toString(){
-        return firstName+" "+lastName;
+    public String toString() {
+        return firstName + " " + lastName;
     }
 }

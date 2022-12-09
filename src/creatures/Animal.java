@@ -78,7 +78,7 @@ public class Animal {
         this.name = name;
     }
 
-    public String toString(){
-        return species+": "+name+", weight: "+weight;
+    public String toString() {
+        return species + ": " + name + ", weight: " + weight;
     }
 }
