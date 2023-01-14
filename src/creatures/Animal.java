@@ -1,6 +1,6 @@
 package creatures;
 
-public class Animal {
+public abstract class Animal implements Edible, Feedable, Salleable {
 
     private static final Double DEFAULT_DOG_WEIGHT = 15.0;
     private static final Double DEFAULT_CAT_WEIGHT = 5.0;
@@ -9,8 +9,9 @@ public class Animal {
 
     public String name;
     public final String species;
-    private Double weight;
-    private Boolean isAlive;
+    protected Double weight;
+    protected Boolean isAlive;
+    public Boolean owner;
 
 
     // gettery
@@ -80,5 +81,31 @@ public class Animal {
 
     public String toString() {
         return species + ": " + name + ", weight: " + weight;
+    }
+
+    @Override
+    public void beEaten() {
+        this.isAlive = false;
+        this.weight = 0.0;
+        System.out.println("Żegnaj złoczyńco");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price) {
+            System.out.println("sorry, nie masz kasy");
+        } else if (seller.pet != this) {
+            System.out.println("błąd");
+        } else if (this instanceof Human) {
+            System.out.println("zapraszam do prokuratury");
+
+        } else {
+            buyer.cash -= price;
+            seller.cash += price;
+            buyer.pet = this;
+            seller.pet = null;
+            System.out.println("transakcja udana, zwierzyna sprzedana");
+        }
+
     }
 }

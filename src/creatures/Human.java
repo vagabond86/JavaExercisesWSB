@@ -1,29 +1,38 @@
 package creatures;
 
 import devices.Car;
+import devices.Phone;
 
-public class Human extends Animal {
+import java.util.Date;
+
+public class Human extends Animal implements Salleable {
     public String firstName;
     public String lastName;
     public Animal pet;
+    public Phone phone;
+    public Car car;
     Boolean property;
     private Double salary;
-    private String car;
+    private String cars;
+    public Double cash;
 
     public Human(String firstName, String lastName) {
         super("Kamil", "homo sapiens", 80.0, true);
         this.firstName = firstName;
         this.lastName = lastName;
+        this.cash = 0.0;
+        this.property = property;
     }
 
     //getter car
     public String getCar() {
-        return car;
+        return cars;
     }
 
     // getter salary
     public Double getSalary() {
-        System.out.println("Pobieranie danych o wypłacie. Aktualna wypłata: " + salary);
+        System.out.println("Pobieranie danych o wypłacie o godzinie: " + new Date());
+        System.out.println("Aktualna wypłata: " + salary);
         return salary;
     }
 
@@ -53,5 +62,14 @@ public class Human extends Animal {
     // toString() method
     public String toString() {
         return firstName + " " + lastName;
+    }
+
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
     }
 }

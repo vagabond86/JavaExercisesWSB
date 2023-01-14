@@ -1,7 +1,7 @@
 import creatures.Animal;
 import creatures.Human;
-import devices.Car;
-import devices.Phone;
+import creatures.Pet;
+import devices.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,26 +13,26 @@ public class Main {
         Human human4 = new Human("Marcin", "Zieliński");
         Human human5 = new Human("Agnieszka", "Woźniak");
 
-        Animal animal = new Animal("Reksio", "dog", 11.0, true);
-        Animal animal1 = new Animal("Buddy", "dog", 50.0, true);
-        Animal animal2 = new Animal("Fluffy", "cat", 10.0, true);
-        Animal animal3 = new Animal("Tweety", "bird", 1.0, true);
-        Animal animal4 = new Animal("George", "monkey", 15.0, true);
-        Animal animal5 = new Animal("Nemo", "fish", 0.5, true);
+        Pet animal = new Pet("Reksio", "dog", 11.0, true, true);
+        Pet animal1 = new Pet("Buddy", "dog", 50.0, true, true);
+        Pet animal2 = new Pet("Fluffy", "cat", 10.0, true, true);
+        Pet animal3 = new Pet("Tweety", "bird", 1.0, true, true);
+        Pet animal4 = new Pet("George", "monkey", 15.0, true, true);
+        Pet animal5 = new Pet("Nemo", "fish", 0.5, true, true);
 
-        Car car = new Car("Model X", "Tesla", 2022, 4, "black", 450000.0);
-        Car car1 = new Car("Corolla", "Toyota", 2021, 4, "white", 25000.00);
-        Car car2 = new Car("Civic", "Honda", 2020, 4, "silver", 23000.00);
-        Car car3 = new Car("Accord", "Honda", 2019, 4, "black", 27000.00);
-        Car car4 = new Car("Altima", "Nissan", 2018, 4, "red", 22000.00);
-        Car car5 = new Car("Camry", "Toyota", 2017, 4, "gray", 24000.00);
+        Electric car = new Electric("Model X", "Tesla", 2022, 4, "black", 450000.0, 45000.0);
+        Petrol car1 = new Petrol("Corolla", "Toyota", 2021, 4, "white", 25000.00,60.0);
+        Petrol car2 = new Petrol("Civic", "Honda", 2020, 4, "silver", 23000.00, 55.0);
+        Petrol car3 = new Petrol("Accord", "Honda", 2019, 4, "black", 27000.00, 45.0);
+        Petrol car4 = new Petrol("Altima", "Nissan", 2018, 4, "red", 22000.00, 60.0);
+        LPG car5 = new LPG("Camry", "Toyota", 2017, 4, "gray", 24000.00, 80.0);
 
-        Phone phone = new Phone("Google", "Pixel 6", 6.4, 4300, 256, "android 13");
-        Phone phone1 = new Phone("Apple", "iPhone 12", 6.1, 2815, 128, "iOS 14");
-        Phone phone2 = new Phone("Samsung", "Galaxy S20", 6.2, 4500, 256, "Android 10");
-        Phone phone3 = new Phone("Google", "Pixel 4", 5.7, 2800, 64, "Android 11");
-        Phone phone4 = new Phone("OnePlus", "8T", 6.5, 4500, 128, "Android 11");
-        Phone phone5 = new Phone("Huawei", "P40 Pro", 6.58, 4200, 256, "Android 10");
+        Phone phone = new Phone(01,"Google", "Pixel 6", 6.4, 4300, 256, "android 13");
+        Phone phone1 = new Phone(02,"Apple", "iPhone 12", 6.1, 2815, 128, "iOS 14");
+        Phone phone2 = new Phone(03,"Samsung", "Galaxy S20", 6.2, 4500, 256, "Android 10");
+        Phone phone3 = new Phone(04,"Google", "Pixel 4", 5.7, 2800, 64, "Android 11");
+        Phone phone4 = new Phone(05,"OnePlus", "8T", 6.5, 4500, 128, "Android 11");
+        Phone phone5 = new Phone(06,"Huawei", "P40 Pro", 6.58, 4200, 256, "Android 10");
 
         //pets feeding process
         human.setAnimal(animal);
