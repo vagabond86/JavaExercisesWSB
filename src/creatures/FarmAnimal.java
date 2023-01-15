@@ -1,6 +1,6 @@
 package creatures;
 
-public class FarmAnimal extends Animal implements Edible{
+public class FarmAnimal extends Animal implements Edible {
     public FarmAnimal(String name, String species, Double weight, Boolean isAlive, Boolean owner) {
         super(name, species, weight, isAlive);
         this.owner = owner;
@@ -21,5 +21,9 @@ public class FarmAnimal extends Animal implements Edible{
     @Override
     public void sell(Human seller, Human buyer, Double price) {
 
+    }
+
+    public String toString() {
+        return "Zwierzę pochodzi z farmy, to " + this.species;
     }
 }

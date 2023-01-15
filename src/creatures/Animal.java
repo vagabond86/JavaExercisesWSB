@@ -6,6 +6,7 @@ public abstract class Animal implements Edible, Feedable, Salleable {
     private static final Double DEFAULT_CAT_WEIGHT = 5.0;
     private static final Double DEFAULT_BIRD_WEIGHT = 0.5;
     private static final Double DEFAULT_ANIMAL_WEIGHT = 1.0;
+    private static final Double DEFAULT_WALK_DISTANCE = 2.0;
 
     public String name;
     public final String species;
@@ -108,4 +109,5 @@ public abstract class Animal implements Edible, Feedable, Salleable {
         }
 
     }
+
 }

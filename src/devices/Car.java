@@ -76,7 +76,7 @@ public abstract class Car implements Salleable {
             seller.cash += price;
             buyer.car = this;
             seller.car = null;
-            System.out.println("transakcja udana, telefon sprzedany");
+            System.out.println("transakcja udana, auto opchnięte");
         }
     }
 }

@@ -3,6 +3,8 @@ package devices;
 import creatures.Human;
 
 public class Phone extends Devices {
+    private static final String DEFAULT_SERVER_ADDRESS = "Android.com";
+    private static final String DEFAULT_APP_VERSION = "latest_stable_version";
     private String producer;
     private String model;
     private Double displaySize;
@@ -45,4 +47,27 @@ public class Phone extends Devices {
     void turnOn() {
 
     }
+
+    public void installApp(String appName) {
+        this.installApp(appName, DEFAULT_APP_VERSION);
+    }
+
+    public void installApp(String appName, String appVersion) {
+        this.installApp(appName, appVersion, DEFAULT_SERVER_ADDRESS);
+    }
+
+    public void installApp(String appName, String appVersion, String serverAddress) {
+        System.out.println("Sprawdzam płatność dla " + appName + " w wersji " + appVersion + " z serwera " + serverAddress);
+        System.out.println("Sprawdzam kontrolę rodzicielską dla " + appName + " w wersji " + appVersion + " z serwera " + serverAddress);
+        System.out.println("Sprawdzam ilość wymaganego miejsca w pamięci dla " + appName + " w wersji " + appVersion + " z serwera " + serverAddress);
+        System.out.println("Aplikacja " + appName + " w wersji " + appVersion + " została zainstalowana z serwera " + serverAddress);
+    }
 }
+
+
+//    public void installApp(List<String> appNames) {
+//        for (String appName : appNames) {
+//            this.installApp(appName);
+//        }
+//    }
+

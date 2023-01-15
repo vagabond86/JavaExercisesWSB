@@ -34,6 +34,9 @@ public class Main {
         Phone phone4 = new Phone(05,"OnePlus", "8T", 6.5, 4500, 128, "Android 11");
         Phone phone5 = new Phone(06,"Huawei", "P40 Pro", 6.58, 4200, 256, "Android 10");
 
+        phone2.installApp("facebook");
+
+
         //pets feeding process
         human.setAnimal(animal);
         System.out.println(animal.name + " waży: " + animal.getWeight() + " kg");
@@ -75,6 +78,7 @@ public class Main {
         } else {
             System.out.println("Obiekty str1 i str2 są od siebie różne");
         }
+
     }
 }
 

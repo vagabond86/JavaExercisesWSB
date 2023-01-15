@@ -1,5 +1,7 @@
 package devices;
 
+import java.sql.SQLOutput;
+
 public class LPG extends Car {
     public Double maxTankPressure;
 
@@ -13,5 +15,15 @@ public class LPG extends Car {
     @Override
     void refuel() {
         
+    }
+
+    @Override
+    void turnOn() {
+        System.out.println("Odkręć gaz");
+        System.out.println("Przekręć kluczyk");
+        System.out.println("mieli");
+        System.out.println("mieli");
+        System.out.println("mieli");
+        System.out.println("Działa, szerokiej drogi");
     }
 }

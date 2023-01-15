@@ -19,4 +19,9 @@ public class Electric extends Car {
         System.out.println("czekasz");
         System.out.println("naładowane, możesz jechać");
     }
+
+    public void turnOn(){
+        System.out.println("Włącz przycisk START/STOP");
+        System.out.println("Odpalone, jedź");
+    }
 }
