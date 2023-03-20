@@ -1,5 +1,7 @@
 package devices;
 
+import creatures.Human;
+
 import java.sql.SQLOutput;
 
 public class LPG extends Car {
@@ -25,5 +27,10 @@ public class LPG extends Car {
         System.out.println("mieli");
         System.out.println("mieli");
         System.out.println("Działa, szerokiej drogi");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+
     }
 }

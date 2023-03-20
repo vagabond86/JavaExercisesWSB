@@ -2,6 +2,9 @@ package devices;
 
 import creatures.Human;
 
+import java.net.URL;
+import java.util.List;
+
 public class Phone extends Devices {
     private static final String DEFAULT_SERVER_ADDRESS = "Android.com";
     private static final String DEFAULT_APP_VERSION = "latest_stable_version";
@@ -48,6 +51,12 @@ public class Phone extends Devices {
 
     }
 
+    public void installApp(URL appURL){
+        String serverAddress = appURL.getHost();
+        String appName = appURL.getFile();
+        this.installApp(appName, DEFAULT_APP_VERSION, serverAddress);
+    }
+
     public void installApp(String appName) {
         this.installApp(appName, DEFAULT_APP_VERSION);
     }
@@ -62,12 +71,12 @@ public class Phone extends Devices {
         System.out.println("Sprawdzam ilość wymaganego miejsca w pamięci dla " + appName + " w wersji " + appVersion + " z serwera " + serverAddress);
         System.out.println("Aplikacja " + appName + " w wersji " + appVersion + " została zainstalowana z serwera " + serverAddress);
     }
+
+    public void installApp(List<String> appNames){
+
+    }
+
+
 }
 
-
-//    public void installApp(List<String> appNames) {
-//        for (String appName : appNames) {
-//            this.installApp(appName);
-//        }
-//    }
 

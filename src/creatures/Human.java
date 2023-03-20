@@ -4,29 +4,40 @@ import devices.Car;
 import devices.Phone;
 
 import java.util.Date;
+import java.util.List;
 
-public class Human extends Animal implements Salleable {
+public class Human extends Animal {
+    public static final Integer DEFAULT_GARAGE_SIZE = 3;
+    private static final Double DEFAULT_HUMAN_WEIGHT = 80.0;
+    private static final String HUMAN_SPECIE = "homo sapiens";
     public String firstName;
     public String lastName;
     public Animal pet;
     public Phone phone;
-    public Car car;
     Boolean property;
     private Double salary;
-    private String cars;
     public Double cash;
 
-    public Human(String firstName, String lastName) {
-        super("Kamil", "homo sapiens", 80.0, true);
+    private Car[] garage; // nowa lista samochodów
+
+
+    public Human(String firstName) {
+        super(HUMAN_SPECIE, DEFAULT_HUMAN_WEIGHT);
         this.firstName = firstName;
-        this.lastName = lastName;
         this.cash = 0.0;
-        this.property = property;
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
     }
 
-    //getter car
-    public String getCar() {
-        return cars;
+    public Human(String firstName, Integer garageSize) {
+        super(HUMAN_SPECIE, DEFAULT_HUMAN_WEIGHT);
+        this.firstName = firstName;
+        this.cash = 0.0;
+        this.garage = new Car[garageSize];
+    }
+
+    //getter garage
+    public List<Car> getGarage() {
+        return List.of(garage);
     }
 
     // getter salary
@@ -48,16 +59,42 @@ public class Human extends Animal implements Salleable {
         }
     }
 
-    //setter check if you could buy it
-    public void setCar(Car car) {
-        if (this.salary > car.getValue()) {
-            System.out.println("Udało się kupić samochód za gotówkę");
-        } else if (this.salary > car.getValue() / 12) {
-            System.out.println("Udało się kupić samochód na kredyt(no trudno)!");
+    //setter do zadania 5
+//    public void setCar(Integer parkingSpace, Car car) {
+//        if (parkingSpace < 0 || parkingSpace >= this.garage.length) {
+//            System.out.println("Nie ma takiego miejsca w garażu!");
+//        } else {
+//            if (this.salary > car.getValue()) {
+//                System.out.println("Udało się kupić samochód za gotówkę");
+//                garage.set(parkingSpace, car);
+//            } else if (this.salary > car.getValue() / 12) {
+//                System.out.println("Udało się kupić samochód na kredyt(no trudno)!");
+//                garage.set(parkingSpace, car);
+//            } else {
+//                System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
+//            }
+//        }
+//    }
+
+
+    public Car getCar(Integer parkingSpace) {
+        if (parkingSpace < 0 || parkingSpace >= this.garage.length) {
+            System.out.println("Nie ma takiego miejsca w garażu!");
+            return null;
         } else {
-            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
+            return this.garage[parkingSpace];
         }
     }
+
+    public Double sumGarageValue() {
+        Double sum = 0.0;
+        for (Car car : this.garage) {
+            if (car != null)
+                sum += car.getValue();
+        }
+        return sum;
+    }
+
 
     // toString() method
     public String toString() {
@@ -69,7 +106,49 @@ public class Human extends Animal implements Salleable {
 
     }
 
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
+
+    public boolean hasCar(Car newCar) {
+        boolean humanHasCar = false;
+        for (Car car : this.garage) {
+            if (car == newCar) {
+                humanHasCar = true;
+                break;
+            }
+        }
+        return humanHasCar;
     }
+
+
+    public boolean hasFreeParkingSpace() {
+        boolean humanHasFreeParkingSpace = false;
+        for (Car car : this.garage) {
+            if (car == null) {
+                humanHasFreeParkingSpace = true;
+                break;
+            }
+        }
+        return humanHasFreeParkingSpace;
+
+    }
+
+    public void removeCar(Car carToRemove) throws Exception {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == carToRemove) {
+                this.garage[i] = null;
+                return;
+            }
+        }
+        throw new Exception("Nie znaleziono samochodu w garażu.");
+    }
+
+    public void addCar(Car carToAdd) throws Exception {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == null) {
+                this.garage[i] = carToAdd;
+                return;
+            }
+        }
+        throw new Exception("Brak wolnych miejsc w garażu.");
+    }
+
 }

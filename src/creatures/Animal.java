@@ -9,10 +9,13 @@ public abstract class Animal implements Edible, Feedable, Salleable {
     private static final Double DEFAULT_WALK_DISTANCE = 2.0;
 
     public String name;
-    public final String species;
+    public String species;
     protected Double weight;
     protected Boolean isAlive;
     public Boolean owner;
+
+    public Animal(String humanSpecie, Double defaultGarageSize) {
+    }
 
 
     // gettery
@@ -92,7 +95,7 @@ public abstract class Animal implements Edible, Feedable, Salleable {
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double price) {
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
         if (buyer.cash < price) {
             System.out.println("sorry, nie masz kasy");
         } else if (seller.pet != this) {
