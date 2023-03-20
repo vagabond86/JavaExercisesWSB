@@ -1,11 +1,56 @@
-//import creatures.Animal;
-//import creatures.Human;
-//import creatures.Pet;
-//import devices.*;
-//
-//public class Main {
-//    public static void main(String[] args) {
-//
+import devices.Application;
+import devices.Phone;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Phone phone1 = new Phone(01, "Google", "Pixel 6", 6.4, 4300, 256, "android 13");
+        Phone phone2 = new Phone(02, "Apple", "iPhone 12", 6.1, 2815, 128, "iOS 14");
+        Phone phone3 = new Phone(03, "Samsung", "Galaxy S20", 6.2, 4500, 256, "Android 10");
+        Phone phone4 = new Phone(04, "Google", "Pixel 4", 5.7, 2800, 64, "Android 11");
+
+
+        Application app1 = new Application("Facebook", "2023.03-01", 0.0);
+        Application app2 = new Application("Instagram", "2023.03-01", 0.99);
+        Application app3 = new Application("Twitter", "2023.03-01", 2.99);
+        Application app4 = new Application("Snapchat", "2023.03-01", 1.99);
+        Application app5 = new Application("TikTok", "2023.03-01", 0.0);
+        Application app6 = new Application("YouTube", "2023.03-01", 0.0);
+        Application app7 = new Application("WhatsApp", "2023.03-01", 0.0);
+        Application app8 = new Application("Messenger", "2023.03-01", 0.0);
+        Application app9 = new Application("Pinterest", "2023.03-01", 2.99);
+        Application app10 = new Application("Spotify", "2023.03-01", 4.99);
+
+        phone1.cash = 10.0;
+        phone2.cash = 5.0;
+        phone3.cash = 0.0;
+        phone4.cash = -5.0;
+
+        phone1.installApp(app1);
+        phone1.installApp(app2);
+        phone1.installApp(app3);
+        phone1.installApp(app4);
+        phone1.installApp(app5);
+        phone1.installApp(app6);
+        phone1.installApp(app7);
+        phone1.installApp(app8);
+
+        System.out.println(phone1.isAppInstalled("Facebook"));
+        System.out.println(phone1.isAppInstalled(app1));
+        System.out.println(phone2.isAppInstalled("Facebook"));
+
+        System.out.println("Lista bezpłatnych aplikacji zainsalowanych w telefonie: ");
+        phone1.printFreeApps();
+
+        System.out.println("W telefonie zainstalowano aplikacje za łączną kwotę: " + phone1.getTotalValueOfInstalledApps());
+
+        System.out.println("W telefonie zainstalowano następujące aplikacje: ");
+        phone1.printAppsAlphabetically();
+
+        System.out.println("W telefonie zainstalowano następujące aplikacje:");
+        phone1.printAppsByPrice();
+
+
 //        Human human = new Human("Kamil", "Górzyński");
 //        Human human1 = new Human("Katarzyna", "Nowak");
 //        Human human2 = new Human("Piotr", "Kowalski");
@@ -26,15 +71,6 @@
 //        Petrol car3 = new Petrol("Accord", "Honda", 2019, 4, "black", 27000.00, 45.0);
 //        Petrol car4 = new Petrol("Altima", "Nissan", 2018, 4, "red", 22000.00, 60.0);
 //        LPG car5 = new LPG("Camry", "Toyota", 2017, 4, "gray", 24000.00, 80.0);
-//
-//        Phone phone = new Phone(01,"Google", "Pixel 6", 6.4, 4300, 256, "android 13");
-//        Phone phone1 = new Phone(02,"Apple", "iPhone 12", 6.1, 2815, 128, "iOS 14");
-//        Phone phone2 = new Phone(03,"Samsung", "Galaxy S20", 6.2, 4500, 256, "Android 10");
-//        Phone phone3 = new Phone(04,"Google", "Pixel 4", 5.7, 2800, 64, "Android 11");
-//        Phone phone4 = new Phone(05,"OnePlus", "8T", 6.5, 4500, 128, "Android 11");
-//        Phone phone5 = new Phone(06,"Huawei", "P40 Pro", 6.58, 4200, 256, "Android 10");
-//
-//        phone2.installApp("facebook");
 //
 //
 //        //pets feeding process
@@ -78,7 +114,5 @@
 //        } else {
 //            System.out.println("Obiekty str1 i str2 są od siebie różne");
 //        }
-//
-//    }
-//}
-//
+    }
+}

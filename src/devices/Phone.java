@@ -3,7 +3,7 @@ package devices;
 import creatures.Human;
 
 import java.net.URL;
-import java.util.List;
+import java.util.*;
 
 public class Phone extends Devices {
     private static final String DEFAULT_SERVER_ADDRESS = "Android.com";
@@ -14,11 +14,13 @@ public class Phone extends Devices {
     private Integer batteryCapacity;
     private Integer internalStorage;
     private String os;
+    public Double cash;
+
+    Set<Application> installedApps = new HashSet<>();
+
 
     public Phone(Integer id, String producer, String model, Double displaySize, Integer batteryCapacity, Integer internalStorage, String os) {
-        super(id);
-        this.producer = producer;
-        this.model = model;
+        super(id, producer, model);
         this.displaySize = displaySize;
         this.batteryCapacity = batteryCapacity;
         this.internalStorage = internalStorage;
@@ -51,7 +53,7 @@ public class Phone extends Devices {
 
     }
 
-    public void installApp(URL appURL){
+    public void installApp(URL appURL) {
         String serverAddress = appURL.getHost();
         String appName = appURL.getFile();
         this.installApp(appName, DEFAULT_APP_VERSION, serverAddress);
@@ -72,8 +74,61 @@ public class Phone extends Devices {
         System.out.println("Aplikacja " + appName + " w wersji " + appVersion + " została zainstalowana z serwera " + serverAddress);
     }
 
-    public void installApp(List<String> appNames){
+    public void installApp(List<String> appNames) {
 
+    }
+
+    public void installApp(Application app) {
+        if (cash >= app.getPrice()) {
+            installedApps.add(app);
+            cash -= app.getPrice();
+        }
+    }
+
+    public boolean isAppInstalled(Application app) {
+        return installedApps.contains(app);
+    }
+
+    public boolean isAppInstalled(String appName) {
+        for (Application app : installedApps) {
+            if (app.getName().equals(appName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void printFreeApps() {
+        for (Application app : installedApps) {
+            if (app.getPrice() == 0.0) {
+                System.out.println(app.getName());
+            }
+        }
+    }
+
+    public Double getTotalValueOfInstalledApps() {
+        Double totalValue = 0.0;
+        for (Application app : installedApps) {
+            totalValue += app.getPrice();
+        }
+        return totalValue;
+    }
+
+    public void printAppsAlphabetically() {
+        List<Application> sortedApps = new ArrayList<>(installedApps);
+        sortedApps.sort(Comparator.comparing(Application::getName));
+        for (Application app : sortedApps) {
+            System.out.println(app.getName());
+        }
+
+    }
+
+    public void printAppsByPrice() {
+        List<Application> sortedApps = new ArrayList<>(installedApps);
+        sortedApps.sort(Comparator.comparing(Application::getPrice));
+        for (Application app : sortedApps) {
+            System.out.println(app.getName() + ", wartość: " + app.getPrice());
+        }
     }
 
 

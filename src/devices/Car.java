@@ -115,8 +115,8 @@ public abstract class Car implements Salleable {
     }
 
     public boolean didASoldToB(Human seller, Human buyer) {
-        for (int i = 0; i < owners.size() - 1; i++){
-            if (owners.get(i).equals(seller) && owners.get(i+1).equals(buyer)){
+        for (int i = 0; i < owners.size() - 1; i++) {
+            if (owners.get(i).equals(seller) && owners.get(i + 1).equals(buyer)) {
                 return true;
             }
         }
@@ -124,8 +124,9 @@ public abstract class Car implements Salleable {
 
 
     }
-    public void addFirstOwner(Human firstOwner){
-        if(this.owners.isEmpty()){
+
+    public void addFirstOwner(Human firstOwner) {
+        if (this.owners.isEmpty()) {
             this.owners.add(firstOwner);
         }
     }

@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4101df90-9310-4390-b5a5-599c551f6c1f" name="Changes" comment="metody, overloading">
+    <list default="true" id="4101df90-9310-4390-b5a5-599c551f6c1f" name="Changes" comment="zadania do 12 włącznie, na podstawie zajęć 11-12.03">
+      <change afterPath="$PROJECT_DIR$/src/devices/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creatures/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creatures/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creatures/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creatures/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creatures/Salleable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creatures/Salleable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/devices/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devices/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/devices/Devices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devices/Devices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/devices/LPG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devices/LPG.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/devices/Phone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devices/Phone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,9 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,7 +73,7 @@
       <workItem from="1678605580803" duration="10736000" />
       <workItem from="1679055211763" duration="560000" />
       <workItem from="1679061256450" duration="615000" />
-      <workItem from="1679299820599" duration="10432000" />
+      <workItem from="1679299820599" duration="20761000" />
     </task>
     <task id="LOCAL-00001" summary="zadania 1-5.">
       <created>1670419561076</created>
@@ -122,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673772002801</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="zadania do 12 włącznie, na podstawie zajęć 11-12.03">
+      <created>1679312058559</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679312058560</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +147,8 @@
     <MESSAGE value="a few more objects" />
     <MESSAGE value="klasy abstrakcyjne i interface" />
     <MESSAGE value="metody, overloading" />
-    <option name="LAST_COMMIT_MESSAGE" value="metody, overloading" />
+    <MESSAGE value="zadania do 12 włącznie, na podstawie zajęć 11-12.03" />
+    <option name="LAST_COMMIT_MESSAGE" value="zadania do 12 włącznie, na podstawie zajęć 11-12.03" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
